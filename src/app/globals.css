@@ -1,38 +1,41 @@
 @import "tailwindcss";
 
 @theme {
-  --color-base: #0f1620;
+  --color-canvas: #0f1620;
   --color-panel: #151e29;
   --color-panel-hover: #1b2530;
   --color-line: #253140;
   --color-ink: #e7ecf0;
   --color-ink-soft: #8fa0b3;
-  --color-ink-faint: #56657a;
+  --color-ink-faint: #74879e;
   --color-accent: #45d9b0;
   --color-flag: #e7a94c;
+}
 
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+@theme inline {
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-body {
-  background: var(--color-base);
-  color: var(--color-ink);
-  font-family: var(--font-body);
-}
+@layer base {
+  body {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+  }
 
-* {
-  border-color: var(--color-line);
+  * {
+    border-color: var(--color-line);
+  }
 }
 
 ::selection {
   background: var(--color-accent);
-  color: var(--color-base);
+  color: var(--color-canvas);
 }
 
 :focus-visible {

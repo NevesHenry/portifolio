@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import TimelineItem from "@/components/TimelineItem";
+
+export const metadata: Metadata = {
+  title: "Experience",
+  description:
+    "Software developer at Webjump (AEM, Java, React); previously event-driven microservices and AWS at Axur.",
+};
 
 const roles = [
   {
@@ -6,9 +13,8 @@ const roles = [
     role: "Software Developer",
     org: "Webjump",
     points: [
-      "Develop and optimize digital experiences using Adobe Experience Manager (AEM), Adobe Edge, and Adobe Learning Manager.",
-      "Build and maintain interactive, responsive applications with Java, HTML, CSS, JavaScript, React, and Node.js.",
-      "Collaborate with cross-functional teams to ship high-performance solutions aligned with business needs.",
+      "Develop and optimize digital experiences using Adobe Experience Manager (AEM), Edge Delivery Services, and Adobe Learning Manager.",
+      "Build and maintain the Java services and React/Node.js front ends behind those experiences.",
     ],
   },
   {

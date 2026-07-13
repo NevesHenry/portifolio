@@ -10,22 +10,24 @@ type Project = {
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="rounded-md border border-line bg-panel p-6 transition-colors hover:bg-panel-hover">
+    <div className="flex h-full flex-col rounded-md border border-line bg-panel p-6 transition-colors hover:bg-panel-hover">
       <div className="flex items-start justify-between gap-4">
-        <h3 className="font-display text-lg font-medium text-ink">
+        <h2 className="font-display text-lg font-medium text-ink">
           {project.title}
-        </h3>
+        </h2>
         <StatusFlag status={project.status} />
       </div>
       <p className="mt-3 text-sm leading-relaxed text-ink-soft">
         {project.description}
       </p>
-      <div className="mt-4 flex flex-wrap gap-2">
+      <ul className="mt-4 flex flex-wrap gap-2">
         {project.tags.map((tag) => (
-          <Tag key={tag}>{tag}</Tag>
+          <li key={tag}>
+            <Tag>{tag}</Tag>
+          </li>
         ))}
-      </div>
-      <p className="mt-5 font-mono text-xs text-ink-faint">
+      </ul>
+      <p className="mt-auto pt-5 font-mono text-xs text-ink-faint">
         case study — coming soon
       </p>
     </div>

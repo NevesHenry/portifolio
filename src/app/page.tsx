@@ -13,9 +13,10 @@ const stack = [
 
 export default function Home() {
   return (
-    <section className="mx-auto flex max-w-3xl flex-col gap-8 px-6 py-20 sm:py-28">
-      <p className="font-mono text-sm text-ink-faint">
-        software developer · são josé dos campos, br
+    <section className="mx-auto flex max-w-3xl flex-col gap-8 px-6 py-20 sm:min-h-[70vh] sm:justify-center sm:py-28">
+      <p className="font-mono text-sm text-ink-soft">
+        software developer ·{" "}
+        <span className="whitespace-nowrap">são josé dos campos, br</span>
       </p>
 
       <h1 className="font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
@@ -34,13 +35,13 @@ export default function Home() {
         >
           ●
         </span>
-        available for new opportunities
+        open to new roles
       </p>
 
       <div className="flex flex-wrap gap-3 pt-2">
         <Link
           href="/projects"
-          className="rounded-sm bg-accent px-5 py-2.5 font-mono text-sm font-medium text-base transition-opacity hover:opacity-90"
+          className="rounded-sm bg-accent px-5 py-2.5 font-mono text-sm font-medium text-canvas transition-opacity hover:opacity-90"
         >
           view projects
         </Link>
@@ -53,11 +54,13 @@ export default function Home() {
         </a>
       </div>
 
-      <div className="flex flex-wrap gap-2 pt-6">
+      <ul className="flex flex-wrap gap-2 pt-6">
         {stack.map((tech) => (
-          <Tag key={tech}>{tech}</Tag>
+          <li key={tech}>
+            <Tag>{tech}</Tag>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }
