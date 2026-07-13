@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --color-base: #0f1620;
+  --color-panel: #151e29;
+  --color-panel-hover: #1b2530;
+  --color-line: #253140;
+  --color-ink: #e7ecf0;
+  --color-ink-soft: #8fa0b3;
+  --color-ink-faint: #56657a;
+  --color-accent: #45d9b0;
+  --color-flag: #e7a94c;
+
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-base);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+* {
+  border-color: var(--color-line);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-base);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.status-dot {
+  animation: pulse-dot 2.4s ease-in-out infinite;
+}
